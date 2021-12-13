@@ -20,7 +20,8 @@ while(restart):
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))
-  shift = shift % 26
+  if shift > 26:
+    shift = shift % 26
   caesar(text,shift,direction)
   restart_text = input("continue? 'y' or press 'enter' to end.\n")
   if not restart_text == 'y':
